@@ -17,12 +17,12 @@
 
 .custom-navbar {
   background-color: transparent;
-  transition: background-color 0.3 ease, box shadow 0.3 ease;
+  transition: background-color 0.3 ease, box shadow 0.3s ease;
 }
 
 .custom-navbar.scrolled {
   background-color: #fff8dc;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .custom-navbar .nav-link,
@@ -43,15 +43,21 @@
   filter: invert(0);
 }
 
-
 .navbar-brand img {
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.6));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
   width: 80px;
   height: 40px;
 }
 
-#keunggulan, #fitur, #konsultasi, #tentang-kami {
-  scroll-margin-top: 80px;
+.navbar-brand {
+  cursor: pointer;
+}
+
+#keunggulan,
+#fitur,
+#konsultasi,
+#tentang-kami {
+  scroll-margin-top: 65px;
 }
 
 /* bagian jumbotron */
@@ -81,7 +87,7 @@
 
 .background-jumbotron {
   background-image: url(../img/jumbo.jpg);
-  height: 800px;
+  height: 750px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -116,7 +122,11 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-h2.section-title::before,
+.text-blue {
+  color: #FFD700;
+}
+
+.section-title::before,
 .section-title::after {
   background-color: #FFD700;
   content: "";
@@ -125,6 +135,7 @@ h2.section-title::before,
   position: relative;
   vertical-align: middle;
   width: 50%;
+  margin: 0 15px;
 }
 
 .section-title::before {
@@ -167,10 +178,6 @@ h2.section-title::before,
   padding: 20px;
 }
 
-.text-blue {
-  color: #FFD700;
-}
-
 .keunggulan-card p {
   text-align: center;
   line-height: 1.6;
@@ -183,7 +190,7 @@ h2.section-title::before,
 /* bagian fitur */
 .card:hover {
   background-color: white;
-  box-shadow: 3px 3px 8px 8px rgb(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 12px rgb(0, 0, 0, 0.15);
   transition: all 0.3s ease 0s;
 }
 
@@ -193,7 +200,7 @@ h2.section-title::before,
   padding: 0.25rem
 }
 
-.row > .col-md-4 {
+.row>.col-md-4 {
   display: flex;
 }
 
@@ -256,20 +263,6 @@ p {
   transform: scale(1.1);
 }
 
-/* .carousel-indicators {
-  position: static;
-  margin-top: 20px;
-  justify-content: center;
-} */
-
-/* .carousel-indicators [data-bs-target] {
-  background-color: #FFD700;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 6px;
-} */
-
 .client-description {
   font-size: 1.1rem;
   color: #555;
@@ -320,7 +313,9 @@ p {
   text-align: center;
 }
 
-.lokasi, .copyright, .sosmed {
+.lokasi,
+.copyright,
+.sosmed {
   flex: 1;
   min-width: 200px;
   margin: 5px 0;
@@ -364,10 +359,45 @@ p {
   color: #d4aa00;
   padding: 7px;
   font-size: 16px;
-  transition: color 0.3 ease;
+  transition: color 0.3s ease;
 }
 
- /* background color bagian keunggulan dan tentang kami */
+/* background color bagian keunggulan dan tentang kami */
 .bg-light {
   background-color: #FFF5E1 !important;
+}
+
+/* agar responsif */
+@media (max-width: 768px) {
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 20%;
+    background-color: #FFD700;
+    margin: 0 10px;
+  }
+
+  .text-blue {
+    color: #FFD700;
+    padding-left: 6px;
+  }
+}
+
+
+@media (max-width: 991.98px) {
+  .navbar {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
 }
